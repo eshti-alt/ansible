@@ -1,0 +1,5 @@
+---
+# tasks file for common
+- name: Install vim for debian
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'

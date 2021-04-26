@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="193.168.3.156" id="b317a238-713b-41fc-ba5a-fcf85b71e703" port="22" customName="ansible" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="ansible" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
