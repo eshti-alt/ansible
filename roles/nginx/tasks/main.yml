@@ -6,3 +6,4 @@
     ansible_os_family == "Debian"
   notify:
     - nginx systemd
+    - nginx restart
