@@ -1,9 +1,9 @@
 
+php_webserver_daemon: "nginx"
+php_enable_php_fpm: true
 php_memory_limit: "128M"
 php_max_execution_time: "90"
 php_upload_max_filesize: "256M"
-php_webserver_daemon: "nginx"
-
 php_packages:
   - php
   - php-cli
@@ -19,15 +19,17 @@ php_packages:
   - php-zip
   - php-mysql
 
+php_source_configure_command:
+
 mysql_packages:
   - python-mysqldb
 
 mysql_databases:
   - name: wordpress
-    encoding: latin1
-    collation: latin1_general_ci
+    encoding: utf8
+    collation: utf8_unicode_ci
 mysql_users:
   - name: wordpress
     host: "%"
-    password: similarly-secure-password
-    priv: "example_db.*:ALL"
+    password: wordpress
+    priv: "wordpress.*:ALL"

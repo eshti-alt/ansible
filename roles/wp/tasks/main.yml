@@ -10,7 +10,6 @@
     src: https://wordpress.org/latest.tar.gz
     dest: "/var/www/html"
     remote_src: yes
-    creates: "/var/www/html/wordpress"
 
 - name: set ownership
   file:
@@ -21,12 +20,12 @@
     group: www-data
 
 - name: set permission for directories
-  shell: "/usr/bin/find /var/www/html/wordpress/ -type d -exec chmod 750 {} \\;"
+  shell: "/usr/bin/find /var/www/html/ -type d -exec chmod 750 {} \\;"
 
 - name: set permission for files
-  shell: "/usr/bin/find /var/www/html/wordpress/ -type f -exec chmod 640 {} \\;"
+  shell: "/usr/bin/find /var/www/html/ -type f -exec chmod 640 {} \\;"
 
-#- name: setup wp-config
-#  template:
-#    src: "wp-config.php.j2"
-#    dest: "/var/www/site/wordpress/wp-config.php"
+- name: setup wp-config
+  template:
+    src: "wp-config.php"
+    dest: "/var/www/html/wordpress/wp-config.php"
