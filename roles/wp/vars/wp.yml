@@ -6,6 +6,7 @@ php_max_execution_time: "90"
 php_upload_max_filesize: "256M"
 php_packages:
   - php
+  - php-fpm
   - php-cli
   - php-common
   - php-gd
@@ -21,15 +22,16 @@ php_packages:
 
 php_source_configure_command:
 
-mysql_packages:
-  - python-mysqldb
+mysql_db: wordpress
+mysql_user: wordpress
+mysql_password: wordpress
 
 mysql_databases:
-  - name: wordpress
+  - name: "{{mysql_db}}"
     encoding: utf8
     collation: utf8_unicode_ci
 mysql_users:
-  - name: wordpress
+  - name: "{{mysql_user}}"
     host: "%"
-    password: wordpress
+    password: "{{mysql_password}}"
     priv: "wordpress.*:ALL"

@@ -27,5 +27,5 @@
 
 - name: setup wp-config
   template:
-    src: "wp-config.php"
+    src: "wp-config.php.j2"
     dest: "/var/www/html/wordpress/wp-config.php"
