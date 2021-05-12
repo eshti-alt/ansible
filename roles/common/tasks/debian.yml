@@ -2,3 +2,6 @@
   apt:
     name: vim
     state: present
+
+- name: install python2
+  raw: sudo apt-get -y install python-simplejson

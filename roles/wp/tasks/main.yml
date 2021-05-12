@@ -1,5 +1,4 @@
 ---
-# tasks file for common
 - name: create directory
   file:
     path: /var/www/html
@@ -29,3 +28,4 @@
   template:
     src: "wp-config.php.j2"
     dest: "/var/www/html/wordpress/wp-config.php"
+  tags: wp_config

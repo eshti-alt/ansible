@@ -1,8 +1,9 @@
 - hosts: all
   vars_files:
     - /var/ansible/roles/wp/vars/wp.yml
+    - /var/ansible/roles/wp/vars/wp_vault.yml
   roles:
-    - {role: nginx}
+    - {role: common}
     - {role: geerlingguy.php}
     - {role: geerlingguy.mysql}
-    - {role: wp}
+    - {role: wp, tags: [wp]}

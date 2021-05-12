@@ -1,1 +1,19 @@
 ansible -m ping all -u ansible -k
+
+-- install ssh
+sudo apt-get install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+-- copy ssh to remote host
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote.org.ua
+
+-- vim
+:w + enter (save)
+:x + enter (exit)
+
+-- vault
+дополняем --ask-vault-pass
+
+-- tags ansible
+дополняем --tags {имя тега},{имя тега}
